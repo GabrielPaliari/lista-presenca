@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "alunes",
+  "info": {
+    "singularName": "alune",
+    "pluralName": "alunes",
+    "displayName": "Alune"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Nome": {
+      "type": "string"
+    },
+    "disciplinas": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::disciplina.disciplina",
+      "inversedBy": "alunes"
+    },
+    "aulas": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::aula.aula",
+      "mappedBy": "alunesPresentes"
+    }
+  }
+}

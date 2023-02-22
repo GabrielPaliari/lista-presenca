@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "disciplinas",
+  "info": {
+    "singularName": "disciplina",
+    "pluralName": "disciplinas",
+    "displayName": "Disciplina"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Nome": {
+      "type": "string"
+    },
+    "alunes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::alune.alune",
+      "mappedBy": "disciplinas"
+    },
+    "aulas": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::aula.aula",
+      "mappedBy": "disciplina"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "aulas",
+  "info": {
+    "singularName": "aula",
+    "pluralName": "aulas",
+    "displayName": "Aula"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "DataHora": {
+      "type": "datetime"
+    },
+    "alunesPresentes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::alune.alune",
+      "inversedBy": "aulas"
+    },
+    "disciplina": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::disciplina.disciplina",
+      "inversedBy": "aulas"
+    }
+  }
+}
